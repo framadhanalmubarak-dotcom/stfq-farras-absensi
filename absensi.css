@@ -1,0 +1,201 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }  
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    background: #1e293b;
+    color: white;
+    font-family: arial, sans-serif;
+}
+
+.title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.rigth {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 14px;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.data-user {
+    margin-left: 15px;
+}
+
+.avatar {
+    width: 32px;
+    height: 32px;
+    background: #38bdf8;
+    color: #1e293b;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+table {
+    width: 100%;
+    margin-top: 15px;
+    border-collapse: collapse;
+    background: white;
+}
+  
+.h2 {
+    text-align: center;
+    margin-top: 15px;
+    color: white;
+}
+  
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+  
+th {
+    background: #f8fafc;
+}
+  
+.masuk { background: #22c55e; }
+.keluar { background: #0d6efd; }
+.hapus { background: #ef4444; }
+
+.kurang {
+    background: #fee2e2;
+    color: #991b1b;  
+}
+
+.btn-logout {
+    background: #ee2323;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+.btn-masuk {
+    background: #22c55e;
+    margin-right: 8px;
+}
+
+.edit {
+    background: #38bdf8;
+}
+
+
+.btn-masuk {
+    margin-left: 8px;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #1e293b;
+    color: #ddd;
+    text-align: center;
+    padding: 20px;
+    margin: 0px;
+}
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .footer {
+      font-size: 13px;
+      padding: 12px;
+    }
+  }
+  
+
+@media (max-width: 1024px) {
+    .header {
+        padding: 10px 16px;
+    }
+
+    .title {
+        font-size: 16px;
+    }
+
+    .rigth {
+        gap: 10px;
+        font-size: 13px;
+    }
+
+    table {
+        font-size: 13px;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .rigth {
+        width: 100%;
+        justify-content: space-between;
+        font-size: 12px;
+    }
+
+    .title {
+        font-size: 15px;
+    }
+
+    .avatar {
+        width: 28px;
+        height: 28px;
+        font-size: 12px;
+    }
+
+    table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        white-space: nowrap;
+        font-size: 12px;
+    }
+
+    th, td {
+        padding: 6px;
+    }
+
+    .logout {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 14px;
+    }
+
+    .rigth {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .user {
+        gap: 6px;
+    }
+}

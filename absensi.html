@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id">
+  
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Absensi Karyawan</title>
+    <link rel="stylesheet" href="absensi.css">
+  </head>
+
+  <header class="header">
+    <span class="title">Absensi Karyawan</span>
+
+    <div class="right">
+      <span id="datetime"></span>
+      <span class="user">
+        <span class="avatar" id="avatar"></span>
+        <span id="namaUser"></span>
+      </span>
+    </div>
+  </header>
+  
+  <body onload="cekLogin()">
+
+    <h2 class="data-user">Data user</h2>
+    <div class="button-group">
+      <button class="btn-logout" onclick="logout()">Logout</button>
+      <button class="btn-masuk" onclick="absenMasuk()">Absen Masuk</button>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Tanggal</th>
+          <th>Masuk</th>
+          <th>Keluar</th>
+          <th>Total Jam</th>
+          <th>Aksi</th>
+        </tr>
+      </thead>
+        <tbody id="tabelAbsen"></tbody>
+    </table>
+    <footer class="footer">
+      <p>© 2025 Absensi Karyawan | Dibuat oleh Farras</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="topbar.js"></script>
+  </body>
+</html>
