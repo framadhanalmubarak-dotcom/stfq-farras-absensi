@@ -1,49 +1,102 @@
 <!DOCTYPE html>
 <html lang="id">
-  
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Absensi Karyawan</title>
-    <link rel="stylesheet" href="absensi.css">
-  </head>
 
-  <header class="header">
-    <span class="title">Absensi Karyawan</span>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Absensi Karyawan</title>
+  <link rel="stylesheet" href="absensi.css">
+</head>
 
-    <div class="right">
-      <span id="datetime"></span>
-      <span class="user">
-        <span class="avatar" id="avatar"></span>
-        <span id="namaUser"></span>
-      </span>
-    </div>
-  </header>
-  
-  <body onload="cekLogin()">
+<body onload="cekLogin(); cekMenuAdmin();"></body>
 
-    <h2 class="data-user">Data user</h2>
-    <div class="button-group">
-      <button class="btn-logout" onclick="logout()">Logout</button>
-      <button class="btn-masuk" onclick="absenMasuk()">Absen Masuk</button>
-    </div>
-    <table>
-      <thead>
-        <tr>
-          <th>Tanggal</th>
-          <th>Masuk</th>
-          <th>Keluar</th>
-          <th>Total Jam</th>
-          <th>Aksi</th>
-        </tr>
-      </thead>
+<header class="header">
+  <span class="title">Absensi Karyawan</span>
+
+  <div class="right">
+    <span id="datetime"></span>
+    <span class="user">
+      <span class="avatar" id="avatar"></span>
+      <span id="namaUser"></span>
+    </span>
+  </div>
+</header>
+
+<div class="container">
+
+  <aside class="sidebar">
+    <h3>Menu</h3>
+    <ul>
+      <li onclick="showSection('riwayat')">🕒 Riwayat Absensi</li>
+      <li class="admin-only" onclick="showSection('karyawan')">👥 Daftar Karyawan</li>
+      <li class="admin-only" onclick="showSection('tambahKaryawan')">➕ Tambah Karyawan</li>
+    </ul>
+  </aside>
+
+  <main class="content">
+
+    <section id="riwayat" class="section">
+      <h2 class="data-user">Data User</h2>
+
+      <div class="button-group">
+        <button class="btn-logout" onclick="logout()">clockout</button>
+        <button class="btn-masuk" onclick="absenMasuk()">clockin</button>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>user</th>
+            <th>Tanggal</th>
+            <th>Masuk</th>
+            <th>Keluar</th>
+            <th>Total Jam</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
         <tbody id="tabelAbsen"></tbody>
-    </table>
-    <footer class="footer">
-      <p>© 2025 Absensi Karyawan | Dibuat oleh Farras</p>
-    </footer>
+      </table>
+    </section>
 
-    <script src="script.js"></script>
-    <script src="topbar.js"></script>
-  </body>
+    <section id="karyawan" class="section" style="display:none;">
+      <h2>Daftar Karyawan</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Username</th>
+          </tr>
+        </thead>
+        <tbody id="listKaryawan"></tbody>
+      </table>
+    </section>
+
+    <section id="tambahKaryawan" class="section" style="display:none;">
+      <h2>Tambah Karyawan</h2>
+
+      <input type="text" id="newUsername" placeholder="Username karyawan">
+      <br><br>
+      <input type="password" id="newPassword" placeholder="Password">
+      <br><br>
+
+      <button onclick="tambahKaryawan()">Tambah</button>
+    </section>
+
+
+  </main>
+</div>
+
+<footer class="footer">
+  <p>© 2025 Absensi Karyawan | Dibuat oleh Farras</p>
+</footer>
+
+<script src="js/script.js"></script>
+<script src="js/topbar.js"></script>
+<script src="js/absensi.js"></script>
+<script src="js/karyawan.js"></script>
+<script src="js/admin.js"></script>
+
+</body>
+
 </html>
